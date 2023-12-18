@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="basic">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="C:/eclipse19/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="basic.classpath">
+        <pathelement location="bin"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="basic.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="ArithemeticExeption">
+        <java classname="Exeption.ArithemeticExeption" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Armstrong">
+        <java classname="Javabasic.Armstrong" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="ArraytoStream">
+        <java classname="Collection2.ArraytoStream" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="bubbleshot">
+        <java classname="Javabasic.bubbleshot" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Charcheck">
+        <java classname="basic.Charcheck" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Collectipnex">
+        <java classname="collection.Collectipnex" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="ConcurrentCollection">
+        <java classname="Collection2.ConcurrentCollection" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Convertdate">
+        <java classname="Javabasic.Convertdate" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Countwords">
+        <java classname="basic.Countwords" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Daimond">
+        <java classname="Javabasic.Daimond" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="DivideBy7">
+        <java classname="Collection2.DivideBy7" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="DuplicateEle">
+        <java classname="Collection2.DuplicateEle" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Enum">
+        <java classname="Collection2.Enum" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Enum1">
+        <java classname="collection.Enum1" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Evennum">
+        <java classname="Collection2.Evennum" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="ExplicitCall">
+        <java classname="oop.ExplicitCall" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="factorial">
+        <java classname="Javabasic.factorial" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Failfast (1)">
+        <java classname="Collection2.Failfast" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Failfast">
+        <java classname="collection.Failfast" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="FailSafee">
+        <java classname="Collection2.FailSafee" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="fibonicseries">
+        <java classname="Javabasic.fibonicseries" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Finalhandling">
+        <java classname="Exeption.Finalhandling" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Harmonic">
+        <java classname="Javabasic.Harmonic" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Implicitcontest">
+        <java classname="oop.Implicitcontest" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="lastname">
+        <java classname="basic.lastname" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Library">
+        <java classname="oop.Library" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="ListtoStream">
+        <java classname="Collection2.ListtoStream" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Lower">
+        <java classname="basic.Lower" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="MapExample">
+        <java classname="Collection2.MapExample" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="MapSort">
+        <java classname="Collection2.MapSort" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="MethodOverloading">
+        <java classname="oop.MethodOverloading" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Missingelement">
+        <java classname="Javabasic.Missingelement" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="MultipleCatchhandale">
+        <java classname="Exeption.MultipleCatchhandale" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="num">
+        <java classname="num" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Object5methods">
+        <java classname="Javabasic.Object5methods" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Onetomanytest">
+        <java classname="oop.Onetomanytest" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Onetoonetest">
+        <java classname="oop.Onetoonetest" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="palindrom">
+        <java classname="Javabasic.palindrom" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Parelalshort">
+        <java classname="Javabasic.Parelalshort" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="ParentChildEx">
+        <java classname="Exeption.ParentChildEx" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Paternstar">
+        <java classname="Javabasic.Paternstar" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Person">
+        <java classname="Javabasic.Person" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="PolymorphismArguments">
+        <java classname="oop.PolymorphismArguments" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="primeornot">
+        <java classname="Javabasic.primeornot" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="PrimeWithStream">
+        <java classname="Collection2.PrimeWithStream" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="PrimeWithStreamn">
+        <java classname="Collection2.PrimeWithStreamn" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="PrirityQue">
+        <java classname="Collection2.PrirityQue" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="PropogeEx2">
+        <java classname="Exeption.PropogeEx2" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Randomnumber (1)">
+        <java classname="Javabasic.Randomnumber" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Randomnumber (2)">
+        <java classname="Collection2.Randomnumber" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Randomnumber">
+        <java classname="collection.RandomNumber" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Rays">
+        <java classname="Javabasic.Rays" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Replacealltest">
+        <java classname="basic.Replacealltest" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Reverse">
+        <java classname="basic.Reverse" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="reverseonplace">
+        <java classname="basic.reverseonplace" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="ReverseSentence">
+        <java classname="basic.ReverseSentence" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Secondlargestnum">
+        <java classname="Javabasic.Secondlargestnum" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Shalowcloning">
+        <java classname="oop.Shalowcloning" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="SortedsetEx">
+        <java classname="collection.SortedsetEx" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="SortEmpComparatortest">
+        <java classname="collection.SortEmpComparatortest" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="StackExamp">
+        <java classname="collection.StackExamp" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="StaticMethod">
+        <java classname="Javabasic.StaticMethod" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="StaticPolymorphism">
+        <java classname="oop.StaticPolymorphism" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="StreamArList">
+        <java classname="collection.StreamArList" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Stringcount">
+        <java classname="basic.Stringcount" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="StringCount2">
+        <java classname="basic.StringCount2" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="StringCounttotal">
+        <java classname="basic.StringCounttotal" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="StringImmutablde">
+        <java classname="basic.StringImmutablde" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Stringmethods">
+        <java classname="basic.Stringmethods" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Stringreverse">
+        <java classname="basic.Stringreverse" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="StringtoCharArray">
+        <java classname="basic.StringtoCharArray" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="StrrmToArry">
+        <java classname="Collection2.StrrmToArry" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="table">
+        <java classname="Javabasic.table" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Test (1)">
+        <java classname="OnetoOne.Test" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Test (2)">
+        <java classname="Comparator.Test" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Test">
+        <java classname="Overriding.Test" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestAccount">
+        <java classname="Exeption.TestAccount" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestAge">
+        <java classname="Exeption.TestAge" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestChek">
+        <java classname="Exeption.TestChek" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestCircle">
+        <java classname="oop.TestCircle" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestDeep">
+        <java classname="oop.TestDeep" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestDodAnimal">
+        <java classname="Overriding.TestDodAnimal" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestIImplicit">
+        <java classname="oop.TestIImplicit" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestLogin">
+        <java classname="Exeption.TestLogin" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Testodd">
+        <java classname="Testodd" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Testshape">
+        <java classname="oop.Testshape" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestStatic">
+        <java classname="Javabasic.TestStatic" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestStuComrable">
+        <java classname="Collection2.TestStuComrable" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestStuddenCom">
+        <java classname="Collection2.TestStuddenCom" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TestStudentcom">
+        <java classname="collection.TestStudentcom" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="traingle">
+        <java classname="Javabasic.traingle" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TryFinally">
+        <java classname="Exeption.TryFinally" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="TypeCasting">
+        <java classname="Javabasic.TypeCasting" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="Uncheked">
+        <java classname="Exeption.Uncheked" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="User">
+        <java classname="OnetoOne.User" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="WashingMachine">
+        <java classname="basic.WashingMachine" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+    <target name="WithAnum">
+        <java classname="Collection2.WithAnum" failonerror="true" fork="yes">
+            <classpath refid="basic.classpath"/>
+        </java>
+    </target>
+</project>
